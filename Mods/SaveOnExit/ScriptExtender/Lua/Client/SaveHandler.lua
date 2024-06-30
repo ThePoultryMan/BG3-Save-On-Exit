@@ -2,6 +2,7 @@
 local function handleButtonPress(button)
     button:Subscribe("PreviewMouseDown", function (a, b)
         _P("Saving game...")
+        Ext.Net.PostMessageToServer("SaveOnExit", "save")
     end)
 end
 
