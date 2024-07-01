@@ -20,6 +20,8 @@ function Noesis:findNoesisElementByName(element, name)
     return nil
 end
 
+-- Attempts to find specified Noesis element from a set of integers that explain how to navigate the UI tree.
+-- If this fails, then it attempts to find the element with the recursive Noesis:findNoesisElementByName function.
 function Noesis:findNoesisElementByOrderAndOrName(root, order, name)
     local currentElement = root
     for i = 1, #order do
