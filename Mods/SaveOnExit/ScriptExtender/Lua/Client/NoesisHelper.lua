@@ -23,9 +23,13 @@ end
 function Noesis:findNoesisElementByOrderAndOrName(root, order, name)
     local currentElement = root
     for i = 1, #order do
-        currentElement = currentElement:VisualChild(order[i])
-        if currentElement ~= nil then
-            _P(i, currentElement:GetProperty("Name"))
+        if currentElement.VisualChildrenCount >= order[i] then
+            currentElement = currentElement:VisualChild(order[i])
+            if currentElement:GetProperty("Name") == name then
+                return currentElement
+            end
+        else
+            break
         end
     end
     return self:findNoesisElementByName(root, name)
