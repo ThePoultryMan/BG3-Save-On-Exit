@@ -8,14 +8,12 @@ end
 -- Run when escape key is pressed
 ---@diagnostic disable-next-line: unused-function
 local function onEscapeKey()
-    Ext.Timer.WaitFor(200, function ()
-        local exitButton = Noesis:findNoesisElementByOrderAndOrName(Ext.UI.GetRoot(), {1, 1, 1, 18, 1, 4, 9}, "QuitButton")
-        if not exitButton then
-            _P("[WARN] (SaveOnExit) Exit button not found.")
-            return
-        end
-        handleButtonPress(exitButton)
-    end)
+    local exitButton = Noesis:findNoesisElementByOrderAndOrName(Ext.UI.GetRoot(), {1, 1, 1, 18, 1, 4, 9}, "QuitButton")
+    if not exitButton then
+        _P("[WARN] (SaveOnExit) Exit button not found.")
+        return
+    end
+    handleButtonPress(exitButton)
 end
 
 -- Listens for Escape key input while in game
