@@ -7,15 +7,28 @@ function Noesis:findNoesisElementByName(element, name)
     end
 
     if element:GetProperty("Name") == name then
+        _P("It's the root element.")
         return element
     end
 
     for i = 1, element.VisualChildrenCount do
         local foundElement = self:findNoesisElementByName(element:VisualChild(i), name)
         if foundElement then
+            _P("VisualChild", i, element:GetProperty("Name"))
             return foundElement
         end
     end
 
     return nil
+end
+
+function Noesis:findNoesisElementByOrderAndOrName(root, order, name)
+    local currentElement = root
+    for i = 1, #order do
+        currentElement = currentElement:VisualChild(order[i])
+        if currentElement ~= nil then
+            _P(i, currentElement:GetProperty("Name"))
+        end
+    end
+    return self:findNoesisElementByName(root, name)
 end
