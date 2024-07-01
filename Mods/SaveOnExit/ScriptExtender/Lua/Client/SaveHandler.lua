@@ -18,9 +18,16 @@ local function onEscapeKey()
     end)
 end
 
--- Listens for Escape key input
-Ext.Events.KeyInput:Subscribe(function (event)
-    if event.Event == "KeyUp" and event.Repeat == false and event.Key == "ESCAPE" then
-        onEscapeKey()
+-- Listens for Escape key input while in game
+Ext.Events.GameStateChanged:Subscribe(function (gameStateEvent)
+    local handler
+    if gameStateEvent.ToState == "PrepareRunning" then
+        handler = Ext.Events.KeyInput:Subscribe(function (keyInputEvent)
+            if keyInputEvent.Event == "KeyUp" and keyInputEvent.Repeat == false and keyInputEvent.Key == "ESCAPE" then
+                onEscapeKey()
+            end
+        end)
+    elseif gameStateEvent.ToState == "Menu" and handler ~= nil then
+        Ext.Events.KeyInput:Unsubscribe(handler)
     end
 end)
