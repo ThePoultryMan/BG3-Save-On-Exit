@@ -7,14 +7,12 @@ function Noesis:findNoesisElementByName(element, name)
     end
 
     if element:GetProperty("Name") == name then
-        _P("It's the root element.")
         return element
     end
 
     for i = 1, element.VisualChildrenCount do
         local foundElement = self:findNoesisElementByName(element:VisualChild(i), name)
         if foundElement then
-            _P("VisualChild", i, element:GetProperty("Name"))
             return foundElement
         end
     end
