@@ -15,7 +15,7 @@
               "Description": "{h77eff26969aa40578318d46da3e561611gc3}",
               "Name": "h0fc290e5cc2a47b5a3b988bb17ff13ecg8f3",
               "Type": "checkbox",
-              "Default": true
+              "Default": false
             }
           ]
         }
