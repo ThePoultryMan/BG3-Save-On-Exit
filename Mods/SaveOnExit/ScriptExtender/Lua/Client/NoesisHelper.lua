@@ -34,6 +34,6 @@ function Noesis:findNoesisElementByOrderAndOrName(root, order, name)
             break
         end
     end
-    _P("[Info] (SaveOnExit) Searching for quit button recursively.")
+    if debug then _P("[Info] (SaveOnExit) Searching for quit button recursively.") end
     return self:findNoesisElementByName(root, name)
 end

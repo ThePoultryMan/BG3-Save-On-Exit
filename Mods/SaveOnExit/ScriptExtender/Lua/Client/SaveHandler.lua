@@ -1,3 +1,5 @@
+debug = false
+
 -- Run when exit button is clicked
 local function handleButtonPress(button)
     button:Subscribe("PreviewMouseDown", function (_, _)
@@ -10,7 +12,7 @@ end
 local function onEscapeKey()
     local exitButton = Noesis:findNoesisElementByOrderAndOrName(Ext.UI.GetRoot(), {1, 1, 1, 18, 1, 4, 9}, "QuitButton")
     if not exitButton then
-        _P("[WARN] (SaveOnExit) Exit button not found.")
+        if debug then _P("[WARN] (SaveOnExit) Exit button not found.") end
         return
     end
     handleButtonPress(exitButton)
