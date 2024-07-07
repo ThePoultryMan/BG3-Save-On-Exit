@@ -2,4 +2,8 @@
 <contentList>
     <!--Not sure if &amp; is needed, but using it to be safe.-->
     <content contentuid="h4f08efb0gd636g414cga35age99abcb2a28e" version="1">Save &amp; Quit Game</content>
+    <content contentuid="hae50f17af28c4cdc8296f997fe045f17a103" version="1">Save On Exit Settings</content>
+    <content contentuid="h15fe50b1e2d74ac1a952cf5577e4b3fee2e3" version="1">Debug</content>
+    <content contentuid="h0fc290e5cc2a47b5a3b988bb17ff13ecg8f3" version="1">Enable Debug Log Messages</content>
+    <content contentuid="h77eff26969aa40578318d46da3e561611gc3" version="1">Whether debug logs will be printed to the Script Extender console.</content>
 </contentList>

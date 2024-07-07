@@ -1,0 +1,25 @@
+{
+  "SchemaVersion": 1,
+  "ModName": "Save On Exit",
+  "Tabs": [
+    {
+      "TabId": "SaveOnExit",
+      "TabName": "{hae50f17af28c4cdc8296f997fe045f17a103}",
+      "Sections": [
+        {
+          "SectionId": "Debug",
+          "SectionName": "{h15fe50b1e2d74ac1a952cf5577e4b3fee2e3}",
+          "Settings": [
+            {
+              "Id": "DebugLogging",
+              "Description": "{h77eff26969aa40578318d46da3e561611gc3}",
+              "Name": "h0fc290e5cc2a47b5a3b988bb17ff13ecg8f3",
+              "Type": "checkbox",
+              "Default": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 debug = false
+local MCMModuleUUID = "755a8a72-407f-4f0d-9a33-274ac0f0b53d"
 
 -- Run when exit button is clicked
 local function handleButtonPress(button)
@@ -31,3 +32,7 @@ Ext.Events.GameStateChanged:Subscribe(function (gameStateEvent)
         Ext.Events.KeyInput:Unsubscribe(handler)
     end
 end)
+
+if Ext.Mod.IsModLoaded(MCMModuleUUID) then
+    debug = Mods.BG3MCM.MCMAPI:GetSettingValue("DebugLogging", ModuleUUID)
+end
